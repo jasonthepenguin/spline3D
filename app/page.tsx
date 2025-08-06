@@ -69,17 +69,7 @@ export default function Home() {
         />
       </div>
       
-      {/* Overlay Content (only show when loaded) */}
-      {!isLoading && !hasError && (
-        <div className="relative z-10 flex flex-col items-center justify-center h-full pointer-events-none">
-          <h1 className="text-6xl font-bold text-white mb-4 animate-fade-in">
-            Welcome to Spline3D
-          </h1>
-          <p className="text-xl text-gray-300 text-center max-w-2xl animate-fade-in-delay">
-            Interactive 3D experiences powered by Next.js and Spline
-          </p>
-        </div>
-      )}
+
     </main>
   );
 }
