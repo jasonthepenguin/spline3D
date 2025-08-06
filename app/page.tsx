@@ -11,11 +11,12 @@ export default function Home() {
     setIsLoading(false);
   };
 
-  const handleError = (error: any) => {
+  const handleError = (error: Error | unknown) => {
     // Only treat as error if it's a critical loading error
-    if (error?.message?.includes('Failed to load') || 
-        error?.message?.includes('Network') ||
-        error?.message?.includes('404')) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    if (errorMessage.includes('Failed to load') || 
+        errorMessage.includes('Network') ||
+        errorMessage.includes('404')) {
       console.error('Spline loading error:', error);
       setHasError(true);
       setIsLoading(false);
@@ -45,9 +46,9 @@ export default function Home() {
             </p>
             <ol className="text-left text-gray-400 space-y-2">
               <li>1. Go to your Spline scene at: <a href="https://community.spline.design/file/8cfb6748-f3dd-44dd-89fb-f46c7ab4186e" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">community.spline.design/file/8cfb6748-f3dd-44dd-89fb-f46c7ab4186e</a></li>
-              <li>2. Click "Remix" to open it in the Spline editor</li>
-              <li>3. Click the "Export" button in the top toolbar</li>
-              <li>4. Select "Code" → "React"</li>
+              <li>2. Click &ldquo;Remix&rdquo; to open it in the Spline editor</li>
+              <li>3. Click the &ldquo;Export&rdquo; button in the top toolbar</li>
+              <li>4. Select &ldquo;Code&rdquo; → &ldquo;React&rdquo;</li>
               <li>5. Copy the scene URL (it should look like: https://prod.spline.design/xxxxx/scene.splinecode)</li>
               <li>6. Replace the scene prop in app/page.tsx with your URL</li>
             </ol>
