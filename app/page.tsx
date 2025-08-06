@@ -62,7 +62,7 @@ export default function Home() {
       {/* Spline 3D Scene */}
       <div className="absolute inset-0">
         <Spline 
-          scene="https://prod.spline.design/geah-1oG5aSMWRMb/scene.splinecode"
+          scene="https://prod.spline.design/thc0-JPLr1Zu6neT/scene.splinecode"
           onLoad={handleLoad}
           onError={handleError}
           className="w-full h-full"
